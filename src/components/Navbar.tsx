@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { CiLinkedin } from "react-icons/ci";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
 
 const Navbar = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -105,7 +104,7 @@ const Navbar = () => {
                                  <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="block px-4 py-3 text-sm bg-white/10 rounded-md mb-2 hover:opacity-80 transition-opacity"
+                                    className="block px-4 py-3 text-sm bg-neutral-900 rounded-md mb-2 hover:opacity-80 transition-opacity"
                                  >
                                     {item.title}
                                  </Link>
@@ -131,7 +130,7 @@ const Navbar = () => {
                                  <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="block px-4 py-3 text-sm bg-white/10 rounded-md mb-2 hover:opacity-80 transition-opacity"
+                                    className="block px-4 py-3 text-sm bg-neutral-900 rounded-md mb-2 hover:opacity-80 transition-opacity"
                                  >
                                     {item.title}
                                  </Link>
@@ -160,7 +159,7 @@ const Navbar = () => {
                                  <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="block px-4 py-3 text-sm bg-white/10 rounded-md mb-2 hover:opacity-80 transition-opacity"
+                                    className="block px-4 py-3 text-sm bg-neutral-900 rounded-md mb-2 hover:opacity-80 transition-opacity"
                                  >
                                     {item.title}
                                  </Link>
@@ -206,7 +205,7 @@ const Navbar = () => {
                      <li key={key}>
                         <button onClick={() => toggleDropdown(key as keyof DropdownMenus)} className="w-full flex justify-between items-center py-8 border-b border-white/20">
                            {key.charAt(0).toUpperCase() + key.slice(1)}
-                           <ChevronRight className={`transition-transform ${openDropdown === key ? "rotate-90" : ""} duration-300 ml-2`} />
+                           <FaChevronRight className={`transition-transform ${openDropdown === key ? "rotate-90" : ""} duration-300 ml-2`} />
                         </button>
                         {openDropdown === key && (
                            <ul className="pl-4 py-2 space-y-2">

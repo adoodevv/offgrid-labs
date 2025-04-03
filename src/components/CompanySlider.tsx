@@ -12,13 +12,12 @@ const CompanySlider = () => {
       { name: 'EY', src: '/logos/ey.png' },
       { name: 'Accenture', src: '/logos/accenture.png' },
       { name: 'Santander', src: '/logos/santander.png' },
-      // Add more company logos as needed
+      { name: 'JPMorgan', src: '/logos/jpmorgan.png' },
+      { name: 'Blockapps', src: '/logos/blockapps.png' },
    ];
 
-   // State to track logo position for animation
    const [position, setPosition] = useState(0);
 
-   // Effect to animate the logos
    useEffect(() => {
       const interval = setInterval(() => {
          setPosition((prevPosition) => (prevPosition - 1) % (companyLogos.length * 200));
@@ -47,7 +46,6 @@ const CompanySlider = () => {
                   />
                </div>
             ))}
-            {/* Duplicate logos for seamless looping */}
             {companyLogos.map((logo, index) => (
                <div key={`duplicate-${index}`} className="mx-8" style={{ width: '150px', minWidth: '150px' }}>
                   <Image
@@ -55,7 +53,7 @@ const CompanySlider = () => {
                      alt={logo.name}
                      width={150}
                      height={50}
-                     className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
+                     className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   />
                </div>
             ))}
