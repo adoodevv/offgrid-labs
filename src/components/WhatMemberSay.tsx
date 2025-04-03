@@ -33,14 +33,13 @@ const WhatMemberSay = () => {
   return (
     <section className="py-16 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-bold mb-12">WHAT OUR MEMBERS SAY</h2>
-
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-12">WHAT OUR MEMBERS SAY</h1>
         <div className="relative">
           <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${activeIndex * 33.33}%)` }}>
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`w-6/12 flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out ${index === activeIndex ? 'bg-orange-300' : 'bg-white/10'}`}
+                className={`w-10/12 md:w-6/12 flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out ${index === activeIndex ? 'bg-orange-300' : 'bg-neutral-900'}`}
               >
                 <p className="mb-6 text-base">{testimonial.text}</p>
                 <div className="flex items-center">

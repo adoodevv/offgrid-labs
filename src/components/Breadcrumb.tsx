@@ -44,7 +44,7 @@ const Breadcrumb = ({
                   <React.Fragment key={index}>
                      {index > 0 && (
                         <span className="mx-4 text-gray-500">
-                           <FaChevronRight className="h-4 w-4" />
+                           <FaChevronRight className="h-3 w-3" />
                         </span>
                      )}
                      <li>

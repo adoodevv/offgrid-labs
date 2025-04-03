@@ -27,7 +27,7 @@ const CompanySlider = () => {
    }, [companyLogos.length]);
 
    return (
-      <div className="relative bg-white/10 py-8 overflow-hidden">
+      <div className="relative bg-neutral-900 py-8 overflow-hidden">
          <div
             className="flex items-center"
             style={{

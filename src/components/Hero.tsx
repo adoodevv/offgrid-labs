@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="container mx-auto px-6 py-12">
                <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-7/12 md:pr-12 z-10">
-                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                     <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular leading-tight">
                         <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">
                            OGL:
                         </span>{" "}
@@ -23,7 +23,7 @@ const Hero = () => {
                            </span>
                         </span>
                      </h1>
-                     <p className="mt-6 text-lg text-gray-300 max-w-lg">
+                     <p className="mt-6 text-lg sm:text-xl opacity-80 max-w-lg">
                         As a trusted convener, OGL brings together businesses, developers, and the broader ecosystem to drive innovation and foster collaboration for a decentralized future.
                      </p>
                   </div>

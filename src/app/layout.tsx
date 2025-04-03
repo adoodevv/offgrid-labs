@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OFFGRID LABS",
+  title: "Offgrid Labs",
   description: "The leading nonprofit driving Enterprise Ethereum Adoption",
 };
 

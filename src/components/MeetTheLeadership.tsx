@@ -26,8 +26,8 @@ const MeetTheLeadership = () => {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-5xl font-bold mb-6">MEET THE LEADERSHIP</h1>
-      <p className="text-lg mb-10">EEA leadership is the mix of Web3 native and Enterprise leaders.</p>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-6">MEET THE LEADERSHIP</h1>
+      <p className="text-base sm:text-lg my-4 sm:my-6 md:y-8 opacity-80">EEA leadership is the mix of Web3 native and Enterprise leaders.</p>
 
       <div className="flex gap-4">
         {leaders.map((leader, index) => (

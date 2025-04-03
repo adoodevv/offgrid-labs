@@ -15,27 +15,31 @@ const GroupOfProducts = () => {
 
   return (
     <div className="flex-grow flex flex-col relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h1 className="font-bold text-4xl">OGL GROUP OF PRODUCTS</h1>
-        <p className="text-lg mt-8 opacity-80">
+      <div className="container mx-auto px-4 py-6 md:py-0">
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular">
+          OGL GROUP OF PRODUCTS
+        </h1>
+        <p className="text-base sm:text-lg mt-4 sm:mt-6 md:mt-8 opacity-80">
           From Fortune500 to major Ethereum bluechip companies
         </p>
       </div>
-      <div className="container mx-auto py-12 grid grid-cols-3">
-        {companyLogos.map((logo, index) => (
-          <div
-            key={index}
-            className={`group bg-white/10 py-14 flex items-center justify-center mx-4 border-b-4 ${logo.color} mb-4`}
-          >
-            <Image
-              src={logo.src}
-              alt={logo.name}
-              width={250}
-              height={250}
-              className="h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-            />
-          </div>
-        ))}
+      <div className="container mx-auto px-4 md:px-0 py-6 md:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
+          {companyLogos.map((logo, index) => (
+            <div
+              key={index}
+              className={`group bg-neutral-900 px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} mb-0 md:mb-8`}
+            >
+              <Image
+                src={logo.src}
+                alt={logo.name}
+                width={250}
+                height={250}
+                className="h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
