@@ -26,7 +26,7 @@ const MeetTheLeadership = () => {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-6">MEET THE LEADERSHIP</h1>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-6 text-white">MEET THE LEADERSHIP</h1>
       <p className="text-base sm:text-lg my-4 sm:my-6 md:y-8 opacity-80">EEA leadership is the mix of Web3 native and Enterprise leaders.</p>
 
       <div className="flex gap-4">
@@ -48,7 +48,7 @@ const MeetTheLeadership = () => {
               }}
             />
             {index === activeIndex && (
-              <div className="absolute bottom-0 left-0 p-4 w-full transition-opacity duration-700">
+              <div className="absolute bottom-0 left-0 p-4 w-full transition-opacity text-white duration-700">
                 <h2 className="text-2xl font-bold">{leader.name}</h2>
                 <p>{leader.title}</p>
               </div>

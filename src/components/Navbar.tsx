@@ -83,7 +83,7 @@ const Navbar = () => {
                      </Link>
                   </div>
                </div>
-               <div className="hidden items-center gap-6 md:flex font-bold">
+               <div className="hidden text-white items-center gap-6 md:flex font-bold">
                   <div className="hidden items-center gap-6 md:flex font-bold">
                      <div className="flex items-center gap-2">
                         <div

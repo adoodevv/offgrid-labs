@@ -24,7 +24,7 @@ const BoardOfDirectors = () => {
 
    return (
       <Layout>
-         <div className="flex-grow flex flex-col relative overflow-hidden">
+         <div className="flex-grow text-white flex flex-col relative overflow-hidden">
             <div className="container mx-auto px-4 lg:pt-12">
                <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular leading-tight">BOARD MEMBERS OF THE OGL: <br /> MEET OUR LEADERSHIP TEAM </h1>
                <p className="text-base sm:text-lg mt-8 opacity-80">
@@ -51,7 +51,7 @@ const BoardOfDirectors = () => {
                ))}
             </div>
          </div>
-         <div className="flex-grow flex flex-col relative overflow-hidden">
+         <div className="flex-grow text-white flex flex-col relative overflow-hidden">
             <div className="container mx-auto px-4 pt-12">
                <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular leading-tight">EEA BOARD OF DIRECTOR ALTERNATE <br /> REPRESENTATIVES </h1>
                <p className="text-base sm:text-lg mt-8 opacity-80">
