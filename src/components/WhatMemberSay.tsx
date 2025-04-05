@@ -38,10 +38,6 @@ const WhatMemberSay = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const nextSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
   const getTranslateX = () => {
     if (isMobile) {
       return `-${activeIndex * 106}%`;

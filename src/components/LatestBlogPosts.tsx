@@ -1,16 +1,39 @@
-import React from 'react'
+import { SimpleBlogCard } from "@/lib/interface";
+import { client } from '@/lib/sanity';
+import BlogCard from './BlogCard';
 
-const LatestBlogPosts = () => {
-  return (
-    <div className="flex-grow flex flex-col relative overflow-hidden">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-6">LATEST BLOG POSTS</h1>
-      </div>
-      <div className="container mx-auto py-12 grid grid-cols-4">
-        
-      </div>
-    </div>
-  )
+async function getData() {
+  const query = `
+  *[_type == 'blog'] | order(publishedAt desc) [0...3] {
+    title,
+    smallDescription,
+    "currentSlug": slug.current,
+    titleImage,
+    publishedAt
+  }`;
+
+  const data = await client.fetch(query);
+  return data;
 }
 
-export default LatestBlogPosts
+export default async function LatestBlogPosts() {
+  const data: SimpleBlogCard[] = await getData();
+
+  return (
+    <div className="flex-grow flex flex-col relative overflow-hidden lg:pt-0 pt-16">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular">Latest Blog Posts</h1>
+
+        {data.length === 0 ? (
+          <p className="text-lg mt-8 opacity-80">Coming soon...</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {data.map((blog, index) => (
+              <BlogCard key={blog.currentSlug || index} blog={blog} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
