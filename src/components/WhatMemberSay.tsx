@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const WhatMemberSay = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
   const testimonials = [
     {
       text: "The EEA plays a crucial role in advancing the Ethereum ecosystem by helping enterprises, including Circle, better understand and navigate the Ethereum ecosystem, including its Layer 2 solutions. Their neutral guidance fosters confidence in stablecoins and real-world blockchain applications, making them a key partner in our industry.",
@@ -26,8 +28,25 @@ const WhatMemberSay = () => {
     }
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const nextSlide = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
+  const getTranslateX = () => {
+    if (isMobile) {
+      return `-${activeIndex * 106}%`;
+    }
+    return `-${activeIndex * 33.33}%`;
   };
 
   return (
@@ -35,11 +54,14 @@ const WhatMemberSay = () => {
       <div className="container mx-auto px-4">
         <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-12">WHAT OUR MEMBERS SAY</h1>
         <div className="relative">
-          <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${activeIndex * 33.33}%)` }}>
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(${getTranslateX()})` }}
+          >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`w-10/12 md:w-6/12 flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out ${index === activeIndex ? 'bg-orange-300' : 'bg-neutral-900'}`}
+                className={`${isMobile ? 'w-full' : 'w-10/12 md:w-6/12'} flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out ${index === activeIndex ? 'bg-orange-300' : 'bg-neutral-900'}`}
               >
                 <p className="mb-6 text-base">{testimonial.text}</p>
                 <div className="flex items-center">

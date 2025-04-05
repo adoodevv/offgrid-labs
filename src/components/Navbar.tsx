@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaChevronRight } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 import { BsTwitterX } from "react-icons/bs";
 import { CiLinkedin } from "react-icons/ci";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -11,53 +11,17 @@ import Image from "next/image";
 
 const Navbar = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-   const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
-   const [openDropdown, setOpenDropdown] = useState<keyof DropdownMenus | null>(null);
+   const pathname = usePathname();
 
-   const dropdownMenus = {
-      about: [
-         { title: "Board of Directors", href: "/about/board-of-directors" },
-         { title: "OGL Leadership", href: "/about/ogl-leadership" },
-         { title: "OGL Members", href: "/about/ogl-members" },
-         { title: "Members Spotlight", href: "/about/members-spotlight" },
-         { title: "Blog", href: "/about/blog" },
-      ],
-      become: [{ title: "FAQs", href: "/become-a-member/faqs" }],
-      more: [
-         { title: "Press Releases", href: "/more/press-releases" },
-         { title: "Technical specifications", href: "/more/technical-specifications" },
-         { title: "Surveys & Reports", href: "/more/surveys-reports" },
-         { title: "OGL Primers", href: "/more/ogl-primers" },
-      ],
-   };
-
-   type DropdownKey = keyof typeof dropdownMenus;
-
-   interface DropdownMenu {
-      title: string;
-      href: string;
-   }
-
-   interface DropdownMenus {
-      about: DropdownMenu[];
-      become: DropdownMenu[];
-      more: DropdownMenu[];
-   }
+   const menu = [
+      { title: "Blog", href: "/blog" },
+      { title: "Contact", href: "/contact" },
+      { title: "Products", href: "/products" },
+      { title: "Careers", href: "/careers" },
+   ];
 
    const toggleMobileMenu = () => {
       setMobileMenuOpen(!mobileMenuOpen);
-   };
-
-   const handleMouseEnter = (dropdown: DropdownKey) => {
-      setActiveDropdown(dropdown);
-   };
-
-   const handleMouseLeave = () => {
-      setActiveDropdown(null);
-   };
-
-   const toggleDropdown = (key: keyof DropdownMenus) => {
-      setOpenDropdown(openDropdown === key ? null : key);
    };
 
    return (
@@ -85,89 +49,19 @@ const Navbar = () => {
                </div>
                <div className="hidden text-white items-center gap-6 md:flex font-bold">
                   <div className="hidden items-center gap-6 md:flex font-bold">
-                     <div className="flex items-center gap-2">
-                        <div
-                           className="relative"
-                           onMouseEnter={() => handleMouseEnter("about")}
-                           onMouseLeave={handleMouseLeave}
-                        >
+                     {menu.map((item, index) => {
+                        const isActive = pathname === item.href;
+                        return (
                            <Link
-                              href="/about"
-                              className="group flex items-center gap-1 text-sm rounded-md px-5 py-3 hover:bg-white/10 transition-colors"
+                              key={index}
+                              href={item.href}
+                              className={`flex items-center gap-1 text-sm rounded-md px-5 py-3 transition-colors ${isActive ? "bg-neutral-900" : "hover:bg-neutral-900"
+                                 }`}
                            >
-                              About
-                              <FaChevronRight className={`h-3 w-3 transition-transform ${activeDropdown === "about" ? "rotate-90" : ""} duration-300 ml-2`} />
+                              {item.title}
                            </Link>
-                           {activeDropdown === "about" && (
-                              <div className="absolute top-full left-0 w-48 py-2 z-50">
-                                 {dropdownMenus.about.map((item) => (
-                                    <Link
-                                       key={item.href}
-                                       href={item.href}
-                                       className="block px-4 py-3 text-sm bg-neutral-900 rounded-md mb-2 hover:opacity-80 transition-opacity"
-                                    >
-                                       {item.title}
-                                    </Link>
-                                 ))}
-                              </div>
-                           )}
-                        </div>
-                        <div
-                           className="relative"
-                           onMouseEnter={() => handleMouseEnter("become")}
-                           onMouseLeave={handleMouseLeave}
-                        >
-                           <Link
-                              href="/become-a-member"
-                              className="group flex items-center gap-1 text-sm rounded-md px-5 py-3 hover:bg-white/10 transition-colors"
-                           >
-                              Become A Member
-                              <FaChevronRight className={`h-3 w-3 transition-transform ${activeDropdown === "become" ? "rotate-90" : ""} duration-300 ml-2`} />
-                           </Link>
-                           {activeDropdown === "become" && (
-                              <div className="absolute top-full left-0 w-48 py-2 z-50">
-                                 {dropdownMenus.become.map((item) => (
-                                    <Link
-                                       key={item.href}
-                                       href={item.href}
-                                       className="block px-4 py-3 text-sm bg-neutral-900 rounded-md mb-2 hover:opacity-80 transition-opacity"
-                                    >
-                                       {item.title}
-                                    </Link>
-                                 ))}
-                              </div>
-                           )}
-                        </div>
-                        <Link href="/ogl-groups" className="text-sm rounded-md px-5 py-3 hover:bg-white/10 transition-colors">
-                           OGL Groups
-                        </Link>
-                        <div
-                           className="relative"
-                           onMouseEnter={() => handleMouseEnter("more")}
-                           onMouseLeave={handleMouseLeave}
-                        >
-                           <Link
-                              href="/more"
-                              className="group flex items-center gap-1 text-sm rounded-md px-5 py-3 hover:bg-white/10 transition-colors"
-                           >
-                              More
-                              <FaChevronRight className={`h-3 w-3 transition-transform ${activeDropdown === "more" ? "rotate-90" : ""} duration-300 ml-2`} />
-                           </Link>
-                           {activeDropdown === "more" && (
-                              <div className="absolute top-full left-0 w-52 py-2 z-50">
-                                 {dropdownMenus.more.map((item) => (
-                                    <Link
-                                       key={item.href}
-                                       href={item.href}
-                                       className="block px-4 py-3 text-sm bg-neutral-900 rounded-md mb-2 hover:opacity-80 transition-opacity"
-                                    >
-                                       {item.title}
-                                    </Link>
-                                 ))}
-                              </div>
-                           )}
-                        </div>
-                     </div>
+                        );
+                     })}
                      <div className="flex items-center gap-3">
                         <Link
                            href="/join-ogl"
@@ -202,34 +96,23 @@ const Navbar = () => {
                   </button>
                </div>
                <ul className="mt-10 text-lg px-6">
-                  {Object.keys(dropdownMenus).map((key) => (
-                     <li key={key}>
-                        <button
-                           onClick={() => toggleDropdown(key as keyof DropdownMenus)}
-                           className="w-full flex justify-between items-center py-4 px-2 border-b border-white/20"
+                  {menu.map((item, index) => {
+                     const isActive = pathname === item.href;
+                     return (
+                        <li
+                           key={index}
+                           className={`w-full flex justify-between items-center py-4 px-2 border-b border-white/20 ${isActive ? "text-neutral-400" : ""
+                              }`}
                         >
-                           {key.charAt(0).toUpperCase() + key.slice(1)}
-                           <FaChevronRight className={`transition-transform ${openDropdown === key ? "rotate-90" : ""} duration-300 ml-2`} />
-                        </button>
-                        {openDropdown === key && (
-                           <ul className="pl-4 py-2 space-y-4">
-                              {dropdownMenus[key].map((item) => (
-                                 <li key={item.href}>
-                                    <Link
-                                       href={item.href}
-                                       className="block py-2 px-2 text-white/80 hover:text-white"
-                                    >
-                                       {item.title}
-                                    </Link>
-                                 </li>
-                              ))}
-                           </ul>
-                        )}
-                     </li>
-                  ))}
-                  <li className="py-4 px-2 border-b border-white/20">
-                     <Link href="/ogl-groups">OGL Groups</Link>
-                  </li>
+                           <Link
+                              href={item.href}
+                              className="flex items-center gap-2 w-full"
+                           >
+                              {item.title}
+                           </Link>
+                        </li>
+                     );
+                  })}
                </ul>
                <div className="mt-8 space-y-4 px-6 pb-6">
                   <Link

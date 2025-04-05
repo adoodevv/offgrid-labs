@@ -33,7 +33,7 @@ const MeetTheLeadership = () => {
         {leaders.map((leader, index) => (
           <div
             key={leader.id}
-            className="relative overflow-hidden cursor-pointer transition-all duration-700 ease-in-out"
+            className="relative overflow-hidden cursor-pointer transition-all duration-500 ease-in-out"
             style={{
               flex: index === activeIndex ? '2' : '1',
               height: '500px'
