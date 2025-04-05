@@ -24,7 +24,8 @@ export default async function BlogArticle({
 }: {
    params: { slug: string }
 }) {
-   const data: FullBlog = await getData(params.slug)
+   const { slug } = await params
+   const data: FullBlog = await getData(slug)
 
    return (
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 font-neue">
