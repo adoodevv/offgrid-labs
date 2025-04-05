@@ -7,22 +7,22 @@ export const revalidate = 30
 
 async function getData(slug: string) {
    const query = `
-   *[_type == 'blog' && slug.current == '${slug}'] {
+    *[_type == "blog" && slug.current == $slug][0] {
       "currentSlug": slug.current,
       title,
       content,
       titleImage,
       publishedAt
-   }[0]`
-
-   const data = await client.fetch(query)
+    }
+  `
+   const data = await client.fetch(query, { slug })
    return data
 }
 
 export default async function BlogArticle({
    params,
 }: {
-   params: { slug: string };
+   params: { slug: string }
 }) {
    const data: FullBlog = await getData(params.slug)
 
@@ -38,7 +38,7 @@ export default async function BlogArticle({
                   {new Date(data.publishedAt).toLocaleDateString('en-US', {
                      year: 'numeric',
                      month: 'long',
-                     day: 'numeric'
+                     day: 'numeric',
                   })}
                </p>
             )}

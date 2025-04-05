@@ -6,7 +6,7 @@ const Hero = () => {
       <section className="min-h-screen flex flex-col bg-black text-white">
          <div className="flex-grow flex flex-col relative overflow-hidden">
             <div className="container mx-auto px-6 py-12">
-               <div className="flex flex-col md:flex-row items-center">
+               <div className="flex flex-col-reverse md:flex-row items-center">
                   <div className="md:w-7/12 md:pr-12 z-10">
                      <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular leading-tight">
                         <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">
