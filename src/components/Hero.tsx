@@ -27,7 +27,7 @@ const Hero = () => {
                         As a trusted convener, OGL brings together businesses, developers, and the broader ecosystem to drive innovation and foster collaboration for a decentralized future.
                      </p>
                   </div>
-                  <div className="md:w-5/12 mt-12 md:mt-0 z-10">
+                  <div className="w-10/12 md:w-5/12mt-0 z-10">
                      <div className="relative">
                         <Image
                            src="/heroimg.png"
