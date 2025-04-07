@@ -2,7 +2,7 @@ import GroupOfProducts from '@/components/GroupOfProducts'
 
 const Products = () => {
    return (
-      <div className="pt-16">
+      <div>
          <GroupOfProducts />
       </div>
    )

@@ -7,7 +7,7 @@ const Hero = () => {
          <div className="flex-grow flex flex-col relative overflow-hidden">
             <div className="container mx-auto px-6 py-12">
                <div className="flex flex-col-reverse md:flex-row items-center">
-                  <div className="md:w-7/12 md:pr-12 z-10">
+                  <div className="w-full md:w-7/12 md:pr-12 z-10">
                      <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular leading-tight">
                         <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">
                            OGL:
@@ -27,10 +27,10 @@ const Hero = () => {
                         As a trusted convener, OGL brings together businesses, developers, and the broader ecosystem to drive innovation and foster collaboration for a decentralized future.
                      </p>
                   </div>
-                  <div className="w-10/12 md:w-5/12mt-0 z-10">
+                  <div className="w-10/12 md:w-5/12 mt-0 z-10">
                      <div className="relative">
                         <Image
-                           src="/heroimg.png"
+                           src="/heroimg.jpg"
                            alt="Ethereum hands with butterfly"
                            width={550}
                            height={550}

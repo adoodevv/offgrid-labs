@@ -15,6 +15,7 @@ const Navbar = () => {
 
    const menu = [
       { title: "Blog", href: "/blog" },
+      { title: "Team", href: "/team" },
       { title: "Contact", href: "/contact" },
       { title: "Products", href: "/products" },
       { title: "Careers", href: "/careers" },
@@ -62,20 +63,6 @@ const Navbar = () => {
                            </Link>
                         );
                      })}
-                     <div className="flex items-center gap-3">
-                        <Link
-                           href="/join-ogl"
-                           className="rounded-full border border-white px-6 py-2 text-sm text-white transition-colors hover:bg-white/20"
-                        >
-                           Join OGL
-                        </Link>
-                        <Link
-                           href="/submit-rfp"
-                           className="rounded-full border border-white px-6 py-2 text-sm text-white bg-white/10 transition-colors hover:bg-white/20"
-                        >
-                           Submit RFP
-                        </Link>
-                     </div>
                   </div>
                </div>
             </div>
@@ -114,20 +101,6 @@ const Navbar = () => {
                      );
                   })}
                </ul>
-               <div className="mt-8 space-y-4 px-6 pb-6">
-                  <Link
-                     href="/join-ogl"
-                     className="block text-center border border-white py-3 px-4 rounded-full hover:bg-white hover:text-black transition"
-                  >
-                     Join OGL
-                  </Link>
-                  <Link
-                     href="/submit-rfp"
-                     className="block text-center border border-white bg-white/10 py-3 px-4 rounded-full hover:bg-white hover:text-black transition"
-                  >
-                     Submit RFP
-                  </Link>
-               </div>
             </div>
          )}
          <div className="h-20 sm:h-28"></div>

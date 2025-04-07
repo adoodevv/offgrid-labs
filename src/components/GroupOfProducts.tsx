@@ -14,9 +14,9 @@ const GroupOfProducts = () => {
   ];
 
   return (
-    <div className="flex-grow flex flex-col relative pt-22 overflow-hidden">
-      <div className="container mx-auto px-4 py-6 md:py-0">
-        <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular">
+    <div className="flex-grow flex flex-col relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 py-8 md:py-12">
+        <h1 className="text-white font-bold text-4xl pt-8 md:py-12 sm:text-5xl md:text-6xl bebas-neue-regular">
           OGL GROUP OF PRODUCTS
         </h1>
         <p className="text-white text-base sm:text-lg mt-4 sm:mt-6 md:mt-8 opacity-80">
