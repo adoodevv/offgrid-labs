@@ -27,7 +27,7 @@ const CompanySlider = () => {
    }, [companyLogos.length]);
 
    return (
-      <div className="relative bg-neutral-900 py-8 overflow-hidden">
+      <div className="relative bg-neutral-900 py-6 md:py-8 overflow-hidden">
          <div
             className="flex items-center"
             style={{
@@ -36,24 +36,24 @@ const CompanySlider = () => {
             }}
          >
             {companyLogos.map((logo, index) => (
-               <div key={index} className="mx-8" style={{ width: '150px', minWidth: '150px' }}>
+               <div key={index} className="mx-1 md:mx-8" style={{ width: '150px', minWidth: '150px' }}>
                   <Image
                      src={logo.src}
                      alt={logo.name}
                      width={150}
                      height={50}
-                     className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
+                     className="h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
                   />
                </div>
             ))}
             {companyLogos.map((logo, index) => (
-               <div key={`duplicate-${index}`} className="mx-8" style={{ width: '150px', minWidth: '150px' }}>
+               <div key={`duplicate-${index}`} className="mx-1 md:mx-8" style={{ width: '150px', minWidth: '150px' }}>
                   <Image
                      src={logo.src}
                      alt={logo.name}
                      width={150}
                      height={50}
-                     className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                     className="h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   />
                </div>
             ))}
