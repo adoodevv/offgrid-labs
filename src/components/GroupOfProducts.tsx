@@ -2,15 +2,15 @@ import Image from 'next/image';
 
 const GroupOfProducts = () => {
   const companyLogos = [
-    { name: 'Etherealize', src: '/logos/etherealize.png', color: 'border-yellow-500' },
-    { name: 'Consensys', src: '/logos/consensys.png', color: 'border-sky-500' },
-    { name: 'Ethereum Foundation', src: '/logos/ethereum-foundation.png', color: 'border-purple-500' },
-    { name: 'Microsoft', src: '/logos/microsoft.png', color: 'border-purple-500' },
-    { name: 'EY', src: '/logos/ey.png', color: 'border-blue-900' },
-    { name: 'Accenture', src: '/logos/accenture.png', color: 'border-green-500' },
-    { name: 'Santander', src: '/logos/santander.png', color: 'border-purple-500' },
-    { name: 'Blockapps', src: '/logos/blockapps.png', color: 'border-green-500' },
-    { name: 'JPMorgan', src: '/logos/jpmorgan.png', color: 'border-blue-900' },
+    { name: 'Shika', src: '/logos/shika.png', color: 'border-green-500', invert: false },
+    { name: 'AyaHQ', src: '/logos/aya.webp', color: 'border-yellow-500' },
+    { name: 'ABSA', src: '/logos/absa.png', color: 'border-sky-500' },
+    { name: 'unicef', src: '/logos/unicef.png', color: 'border-purple-500' },
+    { name: 'arbitrum', src: '/logos/arbitrum.png', color: 'border-purple-500' },
+    { name: 'pinax', src: '/logos/pinax.png', color: 'border-blue-900' },
+    { name: 'graph', src: '/logos/graph.png', color: 'border-green-500' },
+    { name: 'Scroll', src: '/logos/scroll.png', color: 'border-green-500', },
+    { name: 'Base', src: '/logos/base.png', color: 'border-blue-900' },
   ];
 
   return (
@@ -33,9 +33,9 @@ const GroupOfProducts = () => {
               <Image
                 src={logo.src}
                 alt={logo.name}
-                width={250}
-                height={250}
-                className="h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                width={170}
+                height={170}
+                className={`h-16 sm:h-20 md:h-28 object-contain filter grayscale hover:grayscale-0 transition-all duration-300 ${logo.invert ? 'invert' : ''}`}
               />
             </div>
           ))}

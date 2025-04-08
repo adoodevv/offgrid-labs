@@ -5,15 +5,15 @@ import Image from 'next/image';
 
 const CompanySlider = () => {
    const companyLogos = [
-      { name: 'Etherealize', src: '/logos/etherealize.png' },
-      { name: 'Consensys', src: '/logos/consensys.png' },
-      { name: 'Ethereum Foundation', src: '/logos/ethereum-foundation.png' },
-      { name: 'Microsoft', src: '/logos/microsoft.png' },
-      { name: 'EY', src: '/logos/ey.png' },
-      { name: 'Accenture', src: '/logos/accenture.png' },
-      { name: 'Santander', src: '/logos/santander.png' },
-      { name: 'JPMorgan', src: '/logos/jpmorgan.png' },
-      { name: 'Blockapps', src: '/logos/blockapps.png' },
+      { name: 'Shika', src: '/logos/shika.png' },
+      { name: 'AyaHQ', src: '/logos/aya.webp' },
+      { name: 'ABSA', src: '/logos/absa.png' },
+      { name: 'unicef', src: '/logos/unicef.png' },
+      { name: 'arbitrum', src: '/logos/arbitrum.png' },
+      { name: 'pinax', src: '/logos/pinax.png' },
+      { name: 'graph', src: '/logos/graph.png' },
+      { name: 'Scroll', src: '/logos/scroll.png' },
+      { name: 'Base', src: '/logos/base.png' },
    ];
 
    const [position, setPosition] = useState(0);

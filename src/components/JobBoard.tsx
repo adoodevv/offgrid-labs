@@ -39,7 +39,10 @@ export default function JobBoard() {
 
    return (
       <div className="mt-8">
-         <div className="flex flex-wrap justify-center gap-2 mb-12 mt-20">
+         <h1 className="text-white text-center font-bold text-xl pt-8 md:py-12 sm:text-5xl md:text-6xl bebas-neue-regular">
+            Sorry, we are not hiring at the moment
+         </h1>
+         {/* <div className="flex flex-wrap justify-center gap-2 mb-12 mt-20">
             {filters.map((filter) => (
                <button
                   key={filter}
@@ -66,7 +69,7 @@ export default function JobBoard() {
                   </Link>
                </div>
             ))}
-         </div>
+         </div> */}
       </div>
    );
 }
