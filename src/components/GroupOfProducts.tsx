@@ -5,7 +5,7 @@ const GroupOfProducts = () => {
   const companyLogos = [
     { name: 'Shika', src: '/logos/shika.png', color: 'border-yellow-500', invert: true, bgColor: 'bg-neutral-900' },
     { name: 'ecofundme', src: '/logos/ecofundme.jpg', color: 'border-sky-500', invert: false, bgColor: 'bg-neutral-900/35' },
-    { name: 'cghs', src: '/logos/eth.png', color: 'border-green-500', invert: false, bgColor: 'bg-neutral-900' },
+    { name: 'cghs', src: '/logos/eth.png', color: 'border-green-500', invert: false, bgColor: 'bg-neutral-900 col-span-2' },
   ];
 
   return (
