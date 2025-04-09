@@ -63,7 +63,7 @@ const WhatMemberSay = () => {
               <Link href={testimonial.link} target="_blank" rel="noopener noreferrer" className={`${isMobile ? 'w-full' : 'w-10/12 md:w-6/12'} flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out rounded-lg ${index === activeIndex ? 'bg-orange-300' : 'bg-neutral-900'}`} key={index}>
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <div className="flex items-center mb-4">
+                    <div className="flex items-center">
                       <div className="w-12 h-12 mr-4 rounded-full overflow-hidden">
                         <Image src={testimonial.logo} alt={testimonial.author} width={48} height={48} className="object-cover" />
                       </div>
@@ -72,11 +72,13 @@ const WhatMemberSay = () => {
                         <p className="text-sm opacity-75">{testimonial.title}</p>
                       </div>
                     </div>
-                    <div className="text-white border border-white rounded-full p-2">
-                      <BsTwitterX className="h-7 w-7" />
+                    <div>
+                      <div className="text-white border border-white rounded-full p-2">
+                        <BsTwitterX className="h-6 w-6" />
+                      </div>
                     </div>
                   </div>
-                  <p className="mt-4 text-base">{testimonial.text}</p>
+                  <p className="text-base md:text-lg">{testimonial.text}</p>
                 </div>
               </Link>
             ))}
