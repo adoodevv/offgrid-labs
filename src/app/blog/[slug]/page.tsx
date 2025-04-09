@@ -1,7 +1,31 @@
 import type { FullBlog } from "@/lib/interface"
 import { client, urlFor } from "@/lib/sanity"
-import { PortableText } from "next-sanity"
+import { PortableText, PortableTextComponents } from "@portabletext/react"
 import Image from "next/image"
+
+const components: PortableTextComponents = {
+   block: {
+      h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
+      h2: ({ children }) => <h2 className="text-2xl font-bold mt-6 mb-3">{children}</h2>,
+      h3: ({ children }) => <h3 className="text-xl font-bold mt-5 mb-2">{children}</h3>,
+      h4: ({ children }) => <h4 className="text-lg font-bold mt-4 mb-2">{children}</h4>,
+      normal: ({ children }) => <p className="mb-4">{children}</p>,
+      blockquote: ({ children }) => <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">{children}</blockquote>,
+   },
+   list: {
+      bullet: ({ children }) => <ul className="list-disc pl-5 mb-4">{children}</ul>,
+      number: ({ children }) => <ol className="list-decimal pl-5 mb-4">{children}</ol>,
+   },
+   listItem: {
+      bullet: ({ children }) => <li className="mb-1">{children}</li>,
+      number: ({ children }) => <li className="mb-1">{children}</li>,
+   },
+   marks: {
+      strong: ({ children }) => <strong>{children}</strong>,
+      em: ({ children }) => <em>{children}</em>,
+      link: ({ value, children }) => <a href={value.href} className="text-blue-600 hover:underline">{children}</a>,
+   },
+}
 
 export const revalidate = 30
 
@@ -57,8 +81,8 @@ export default async function BlogArticle({
          </header>
 
          <article className="max-w-3xl mx-auto mt-12">
-            <div className="prose prose-sm sm:prose md:prose-lg lg:prose-xl prose-slate mx-auto">
-               <PortableText value={data.content} />
+            <div className="prose prose-sm sm:prose md:prose-lg lg:prose-2xl prose-slate mx-auto">
+               <PortableText value={data.content} components={components} />
             </div>
          </article>
       </main>
