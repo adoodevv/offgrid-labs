@@ -3,27 +3,21 @@ import Image from 'next/image';
 const GroupOfProducts = () => {
   const companyLogos = [
     { name: 'Shika', src: '/logos/shika.png', color: 'border-green-500', invert: false },
-    { name: 'AyaHQ', src: '/logos/aya.webp', color: 'border-yellow-500' },
+    { name: 'cghs', src: '/logos/eth.png', color: 'border-yellow-500', invert: false },
     { name: 'ABSA', src: '/logos/absa.png', color: 'border-sky-500' },
-    { name: 'unicef', src: '/logos/unicef.png', color: 'border-purple-500' },
-    { name: 'arbitrum', src: '/logos/arbitrum.png', color: 'border-purple-500' },
-    { name: 'pinax', src: '/logos/pinax.png', color: 'border-blue-900' },
-    { name: 'graph', src: '/logos/graph.png', color: 'border-green-500' },
-    { name: 'Scroll', src: '/logos/scroll.png', color: 'border-green-500', },
-    { name: 'Base', src: '/logos/base.png', color: 'border-blue-900' },
   ];
 
   return (
     <div className="flex-grow flex flex-col relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 py-8 md:py-12">
-        <h1 className="text-white font-bold text-4xl pt-8 md:py-12 sm:text-5xl md:text-6xl bebas-neue-regular">
+        <h1 className="text-white font-bold text-4xl pt-8 md:pt-12 sm:text-5xl md:text-6xl bebas-neue-regular">
           OGL GROUP OF PRODUCTS
         </h1>
-        <p className="text-white text-base sm:text-lg mt-4 sm:mt-6 md:mt-8 opacity-80">
+        <p className="text-white text-base sm:text-lg mt-4 md:mt-8 opacity-80">
           From Fortune500 to major Ethereum bluechip companies
         </p>
       </div>
-      <div className="container mx-auto px-4 md:px-0 py-6 md:py-12">
+      <div className="container mx-auto px-4 md:px-0 pb-6 md:pb-12">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
           {companyLogos.map((logo, index) => (
             <div

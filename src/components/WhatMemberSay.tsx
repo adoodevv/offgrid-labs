@@ -46,7 +46,7 @@ const WhatMemberSay = () => {
   };
 
   return (
-    <section className="py-16 bg-black text-white overflow-hidden">
+    <section className="py-12 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-12">WHAT OUR MEMBERS SAY</h1>
         <div className="relative">
