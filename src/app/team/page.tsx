@@ -6,7 +6,7 @@ const Team = () => {
       { name: 'Emmanuel Odianosen', image: '/profile/emmanuel.jpg', position: 'Developer Relations - Sonieum' },
       { name: 'Michael Lawal', image: '/profile/michael.jpg', position: 'Strategic Advisor - Aya HQ' },
       { name: 'Yele Bademosi', image: '/profile/yele.jpg', position: 'Co-founder - Onboard' },
-      { name: 'Yele Bademosi', image: '/profile/yele.jpg', position: 'Advisor - CEO, Jamit' },
+      { name: 'Ike Orizu', image: '/profile/ike.jpg', position: 'Advisor - CEO, Jamit' },
    ];
 
    const teamRepresentatives = [

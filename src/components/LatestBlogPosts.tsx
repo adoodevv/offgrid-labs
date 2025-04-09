@@ -20,7 +20,7 @@ export default async function LatestBlogPosts() {
   const data: SimpleBlogCard[] = await getData();
 
   return (
-    <div className="flex-grow flex flex-col relative overflow-hidden">
+    <div className="flex-grow flex flex-col relative overflow-hidden md:pt-20 pt-10">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular">Latest Blog Posts</h1>
 
