@@ -16,13 +16,15 @@ const WhatMemberSay = () => {
       title: "CO-FOUNDER, SCROLL",
       logo: "/profile/sandy.jpg",
       link: "https://x.com/sandyzkp/status/1901966014096498991",
+      icon: BsTwitterX,
     },
     {
-      text: "We're proud to be part of the EEA, where we collaborate with L2 protocols and enterprises to accelerate Ethereum adoption.",
-      author: "CODY BURNS",
-      title: "DIRECTOR INNOVATION, ACCENTURE",
-      logo: "/logos/Accenture-Emblem.png",
+      text: "Shika Wallet with the Stablecoin launch is a huge leverage to tackling credit problems associated with the unbanked",
+      author: "Michael Lawal",
+      title: "STRATEGIC ADVISOR - AYA HQ",
+      logo: "/profile/michael.jpg",
       link: "https://www.accenture.com/us-en/insights/blockchain/enterprise-ethereum-alliance",
+      icon: null,
     },
     {
       text: "EEA is the essential bridge to provide the standards, frameworks and education needed to integrate blockchain technology into enterprise operations seamlessly and securely.",
@@ -30,6 +32,7 @@ const WhatMemberSay = () => {
       title: "EY GLOBAL BLOCKCHAIN LEADER",
       logo: "/logos/ey.png",
       link: "https://www.ey.com/en_us/blockchain",
+      icon: null,
     }
   ];
 
@@ -73,9 +76,11 @@ const WhatMemberSay = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="text-white border border-white rounded-full p-2">
-                        <BsTwitterX className="h-6 w-6" />
-                      </div>
+                      {testimonial.icon ?
+                        <div className="text-white border border-white rounded-full p-2">
+                          <testimonial.icon className="h-6 w-6" />
+                        </div>
+                        : ''}
                     </div>
                   </div>
                   <p className="text-base md:text-lg">{testimonial.text}</p>

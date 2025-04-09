@@ -53,7 +53,7 @@ export default async function BlogArticle({
 
    return (
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 font-neue">
-         <header className="max-w-4xl mx-auto mb-10">
+         <header className="flex flex-col items-center justify-center max-w-4xl mx-auto mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl bebas-neue-regular text-center leading-tight mb-6">
                {data.title}
             </h1>
@@ -68,7 +68,7 @@ export default async function BlogArticle({
                </p>
             )}
 
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full md:w-2/3 aspect-video rounded-lg overflow-hidden shadow-lg">
                <Image
                   src={urlFor(data.titleImage).url()}
                   alt={`${data.title} - featured image`}
