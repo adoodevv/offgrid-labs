@@ -1,10 +1,11 @@
+import { b } from 'framer-motion/client';
 import Image from 'next/image';
 
 const GroupOfProducts = () => {
   const companyLogos = [
-    { name: 'Shika', src: '/logos/shika.png', color: 'border-green-500', invert: false },
-    { name: 'cghs', src: '/logos/eth.png', color: 'border-yellow-500', invert: false },
-    { name: 'ABSA', src: '/logos/absa.png', color: 'border-sky-500' },
+    { name: 'Shika', src: '/logos/shika.png', color: 'border-yellow-500', invert: true, bgColor: 'bg-neutral-900' },
+    { name: 'ecofundme', src: '/logos/ecofundme.jpg', color: 'border-sky-500', invert: false, bgColor: 'bg-neutral-900/35' },
+    { name: 'cghs', src: '/logos/eth.png', color: 'border-green-500', invert: false, bgColor: 'bg-neutral-900' },
   ];
 
   return (
@@ -14,7 +15,7 @@ const GroupOfProducts = () => {
           OGL GROUP OF PRODUCTS
         </h1>
         <p className="text-white text-base sm:text-lg mt-4 md:mt-8 opacity-80">
-          From Fortune500 to major Ethereum bluechip companies
+          From African Centric Products to Unicef Approved and QuickNode Accelerator Backed Sustainability Fintech Products
         </p>
       </div>
       <div className="container mx-auto px-4 md:px-0 pb-6 md:pb-12">
@@ -22,14 +23,17 @@ const GroupOfProducts = () => {
           {companyLogos.map((logo, index) => (
             <div
               key={index}
-              className={`group bg-neutral-900 px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} mb-0 md:mb-8`}
+              className={`group px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} ${logo.bgColor} mb-0 md:mb-8 relative overflow-hidden`}
             >
+              <div
+                className={`absolute inset-0 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ${logo.invert ? '' : 'hidden'}`}
+              ></div>
               <Image
                 src={logo.src}
                 alt={logo.name}
                 width={170}
                 height={170}
-                className={`h-16 sm:h-20 md:h-28 object-contain filter grayscale hover:grayscale-0 transition-all duration-300 ${logo.invert ? 'invert' : ''}`}
+                className={`relative h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 ${logo.invert ? '' : ''}`}
               />
             </div>
           ))}

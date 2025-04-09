@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { BsTwitterX } from "react-icons/bs";
 import Image from 'next/image';
+import Link from 'next/link';
 
 const WhatMemberSay = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -9,22 +11,25 @@ const WhatMemberSay = () => {
 
   const testimonials = [
     {
-      text: "The EEA plays a crucial role in advancing the Ethereum ecosystem by helping enterprises, including Circle, better understand and navigate the Ethereum ecosystem, including its Layer 2 solutions. Their neutral guidance fosters confidence in stablecoins and real-world blockchain applications, making them a key partner in our industry.",
-      author: "SANDRA PERSING",
-      title: "VP OF DEVELOPER AND ECOSYSTEM MARKETING, CIRCLE",
-      logo: "/logos/Accenture-Emblem.png",
+      text: "So amazing to see builders bring financial inclusion to West Africa through Scroll Open!",
+      author: "Sandy",
+      title: "CO-FOUNDER, SCROLL",
+      logo: "/profile/sandy.jpg",
+      link: "https://x.com/sandyzkp/status/1901966014096498991",
     },
     {
-      text: "We're proud to be part of the EEA, where we collaborate with L2 protocols and enterprises to accelerate Ethereum adoption. By leveraging our implementation expertise and industry knowledge, we help enterprises navigate the evolving Ethereum ecosystem and implement scalable blockchain solutions. Our involvement helps bridge the gap between enterprise needs and Ethereum's technological capabilities.",
+      text: "We're proud to be part of the EEA, where we collaborate with L2 protocols and enterprises to accelerate Ethereum adoption.",
       author: "CODY BURNS",
       title: "DIRECTOR INNOVATION, ACCENTURE",
       logo: "/logos/Accenture-Emblem.png",
+      link: "https://www.accenture.com/us-en/insights/blockchain/enterprise-ethereum-alliance",
     },
     {
       text: "EEA is the essential bridge to provide the standards, frameworks and education needed to integrate blockchain technology into enterprise operations seamlessly and securely.",
       author: "PAUL BRODY",
       title: "EY GLOBAL BLOCKCHAIN LEADER",
       logo: "/logos/ey.png",
+      link: "https://www.ey.com/en_us/blockchain",
     }
   ];
 
@@ -55,21 +60,25 @@ const WhatMemberSay = () => {
             style={{ transform: `translateX(${getTranslateX()})` }}
           >
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`${isMobile ? 'w-full' : 'w-10/12 md:w-6/12'} flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out ${index === activeIndex ? 'bg-orange-300' : 'bg-neutral-900'}`}
-              >
-                <p className="mb-6 text-base">{testimonial.text}</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 mr-4">
-                    <Image src={testimonial.logo} alt={testimonial.author} width={48} height={48} className="object-contain" />
+              <Link href={testimonial.link} target="_blank" rel="noopener noreferrer" className={`${isMobile ? 'w-full' : 'w-10/12 md:w-6/12'} flex-shrink-0 p-6 mx-2 transition-all duration-500 ease-in-out rounded-lg ${index === activeIndex ? 'bg-orange-300' : 'bg-neutral-900'}`} key={index}>
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 mr-4 rounded-full overflow-hidden">
+                        <Image src={testimonial.logo} alt={testimonial.author} width={48} height={48} className="object-cover" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg">{testimonial.author}</p>
+                        <p className="text-sm opacity-75">{testimonial.title}</p>
+                      </div>
+                    </div>
+                    <div className="text-white border border-white rounded-full p-2">
+                      <BsTwitterX className="h-7 w-7" />
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-lg">{testimonial.author}</p>
-                    <p className="text-sm opacity-75">{testimonial.title}</p>
-                  </div>
+                  <p className="mt-4 text-base">{testimonial.text}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

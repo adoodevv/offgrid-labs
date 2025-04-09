@@ -12,7 +12,7 @@ const CompanySlider = () => {
       { name: 'arbitrum', src: '/logos/arbitrum.png' },
       { name: 'pinax', src: '/logos/pinax.png' },
       { name: 'graph', src: '/logos/graph.png' },
-      { name: 'Scroll', src: '/logos/scroll.png' },
+      { name: 'Scroll', src: '/logos/scroll.svg' },
       { name: 'Base', src: '/logos/base.png' },
    ];
 
@@ -42,7 +42,7 @@ const CompanySlider = () => {
                      alt={logo.name}
                      width={150}
                      height={50}
-                     className="h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
+                     className="h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   />
                </div>
             ))}

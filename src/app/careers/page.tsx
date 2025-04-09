@@ -1,5 +1,4 @@
 import JobBoard from '@/components/JobBoard';
-import Image from 'next/image';
 import { MdArrowOutward } from "react-icons/md";
 
 const Careers = () => {
@@ -8,27 +7,17 @@ const Careers = () => {
          <div className="container flex flex-col mx-auto px-4 sm:px-6 py-8 md:py-12 items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular text-center">
                Join us in our mission to<br />
-               <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">make Ethereum even</span><br />
-               <span className="bg-gradient-to-r from-purple-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">better.</span>
+               <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">Enable Borderless Access with</span><br />
+               <span className="bg-gradient-to-r from-purple-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Technology.</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl opacity-80 max-w-lg mx-auto text-center">
-               Offgrid Labs is a company that is dedicated to building cutting-edge scaling solutions for Ethereum.
-               Comprised of a team of passionate individuals,
-               we take great pride in creating impactful work that is actively shaping the future of blockchain technologies.
+               OFFGRIB LABS is a company dedicated to building edge technologies for sustainability and financial inclusion.
+               Our Mission is to offer borderless financial  opportunity with technology
             </p>
             <button className="flex items-center justify-center sm:justify-start gap-2 py-2 sm:py-3 px-3 sm:px-4 bg-white/10 border border-white/20 font-bold text-base sm:text-lg mt-8 hover:opacity-80 transition-all duration-300 cursor-pointer">
                Join Our Team
                <MdArrowOutward className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <div className="mt-16">
-               <Image
-                  src="/careers-hero.svg"
-                  alt="careers-hero"
-                  width={250}
-                  height={60}
-                  className="h-42 w-auto"
-               />
-            </div>
          </div>
          <div className="container flex flex-col lg:flex-row justify-between mx-auto px-4 sm:px-6 py-8 md:py-12 gap-8">
             <div className="lg:w-[45%]">
@@ -42,22 +31,18 @@ const Careers = () => {
                   future through innovative solutions and collaboration.
                </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 lg:w-[50%]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:w-[50%]">
                <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-yellow-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">19+</h2>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">4+</h2>
                   <p className="text-lg sm:text-xl font-bold mt-2 text-center">Countries</p>
                </div>
                <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-sky-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">75+</h2>
-                  <p className="text-lg sm:text-xl font-bold mt-2 text-center">Team Members</p>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">25+</h2>
+                  <p className="text-lg sm:text-xl font-bold mt-2 text-center">Years Experience</p>
                </div>
                <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-purple-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">2018</h2>
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">2024</h2>
                   <p className="text-lg sm:text-xl font-bold mt-2 text-center">Year Founded</p>
-               </div>
-               <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-green-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">$123M</h2>
-                  <p className="text-lg sm:text-xl font-bold mt-2 text-center">Capital Raised</p>
                </div>
             </div>
          </div>
