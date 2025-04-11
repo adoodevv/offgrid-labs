@@ -1,4 +1,4 @@
-import CountUpNumber from '@/components/CountUpNUmber';
+import CountUpNumber from '@/components/CountUpNumber';
 import FadeUpAnimation from '@/components/FadeUp';
 import JobBoard from '@/components/JobBoard';
 import { MdArrowOutward } from "react-icons/md";

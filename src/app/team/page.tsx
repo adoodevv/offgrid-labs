@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import FadeUpAnimation from '@/components/FadeUp';
 
 export const metadata = {
@@ -37,15 +36,15 @@ const Team = () => {
                   Meet our esteemed Advisors and Partners who are dedicated to advancing blockchain technology and driving innovation across industries.
                </p>
             </div>
-            <div className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-4">
+            <div className="container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                {partnersAndAdvisors.map((person, index) => (
-                  <FadeUpAnimation key={index} delay={index * 0.2}>
+                  <FadeUpAnimation key={index} delay={index * 0.2} className="flex flex-col items-center">
                      <Image
                         src={person.image}
                         alt={person.name}
                         width={250}
                         height={250}
-                        className="h-74 w-74 rounded-full object-contain filter grayscale transition-all duration-300"
+                        className="h-64 w-64 rounded-full object-cover filter grayscale transition-all duration-300 hover:grayscale-0"
                      />
                      <h2 className="text-center mt-4 text-xl font-semibold">{person.name}</h2>
                      <p className="text-center text-sm opacity-80 mt-2">{person.position}</p>
@@ -60,15 +59,15 @@ const Team = () => {
                   Our team representatives are industry leaders and innovators dedicated to driving the adoption and growth of blockchain technology. Meet the individuals who represent our mission and vision across the globe.
                </p>
             </div>
-            <div className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-4">
+            <div className="container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                {teamRepresentatives.map((person, index) => (
-                  <FadeUpAnimation key={index} delay={index * 0.2}>
+                  <FadeUpAnimation key={index} delay={index * 0.2} className="flex flex-col items-center">
                      <Image
                         src={person.image}
                         alt={person.name}
                         width={250}
                         height={250}
-                        className="h-74 w-74 rounded-full object-contain filter grayscale transition-all duration-300"
+                        className="h-64 w-64 rounded-full object-cover filter grayscale transition-all duration-300 hover:grayscale-0"
                      />
                      <h2 className="text-center mt-4 text-xl font-semibold">{person.name}</h2>
                      <p className="text-center text-sm opacity-80 mt-2">{person.position}</p>

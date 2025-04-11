@@ -7,7 +7,7 @@ const GroupOfProducts = () => {
   const companyLogos = [
     { name: 'Shika', src: '/logos/shika.png', color: 'border-yellow-500', invert: true, bgColor: 'bg-neutral-900', link: 'https://shikawallet.com/' },
     { name: 'ecofundme', src: '/logos/ecofundme.jpg', color: 'border-sky-500', invert: false, bgColor: 'bg-neutral-900/35', link: 'http://ecofundme.com/' },
-    { name: 'cghs', src: '/logos/eth.png', color: 'border-green-500', invert: false, bgColor: 'bg-neutral-900 col-span-2 md:col-span-1', link: 'https://cghs-rose.vercel.app/' },
+    { name: 'cghs', src: '/logos/eth.png', color: 'border-green-500', invert: false, bgColor: 'bg-neutral-900', link: 'https://cghs-rose.vercel.app/' },
   ];
 
   return (
@@ -20,13 +20,17 @@ const GroupOfProducts = () => {
           From African Centric Products to Unicef Approved and QuickNode Accelerator Backed Sustainability Fintech Products
         </p>
       </div>
-      <div className="container mx-auto px-4 md:px-0 pb-6 md:pb-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
+      <div className="container mx-auto px-4 pb-6 md:pb-12">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-0">
           {companyLogos.map((logo, index) => (
-            <FadeUpAnimation delay={index * 0.2} key={index}>
+            <FadeUpAnimation
+              delay={index * 0.2}
+              key={index}
+              className={index === 2 ? 'col-span-2 md:col-span-1' : ''}
+            >
               <Link
                 href={logo.link}
-                className={`group px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} ${logo.bgColor} mb-0 md:mb-8 relative overflow-hidden`}
+                className={`group px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} ${logo.bgColor} ${index === 2 ? 'md:mb-8' : 'mb-0 md:mb-8'} relative overflow-hidden`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -38,7 +42,7 @@ const GroupOfProducts = () => {
                   alt={logo.name}
                   width={170}
                   height={170}
-                  className={`relative h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 ${logo.invert ? '' : ''}`}
+                  className={`relative h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300`}
                 />
               </Link>
             </FadeUpAnimation>
