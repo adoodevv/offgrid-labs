@@ -1,5 +1,17 @@
+import CountUpNumber from '@/components/CountUpNUmber';
+import FadeUpAnimation from '@/components/FadeUp';
 import JobBoard from '@/components/JobBoard';
 import { MdArrowOutward } from "react-icons/md";
+
+export const metadata = {
+   title: 'Careers | Offgrid Labs',
+   description: 'Join us in our mission to Enable Borderless Access with Technology.',
+   keywords: 'Offgrid Labs, Products, Technology, Borderless Access',
+   openGraph: {
+      title: 'Careers | Offgrid Labs',
+      description: 'Join us in our mission to Enable Borderless Access with Technology.',
+   },
+}
 
 const Careers = () => {
    return (
@@ -32,18 +44,31 @@ const Careers = () => {
                </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:w-[50%]">
-               <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-yellow-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">4+</h2>
-                  <p className="text-lg sm:text-xl font-bold mt-2 text-center">Countries</p>
-               </div>
-               <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-sky-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">25+</h2>
-                  <p className="text-lg sm:text-xl font-bold mt-2 text-center">Years Experience</p>
-               </div>
-               <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-purple-500">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">2024</h2>
-                  <p className="text-lg sm:text-xl font-bold mt-2 text-center">Year Founded</p>
-               </div>
+               <FadeUpAnimation delay={0.2}>
+                  <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-yellow-500">
+                     <h2 className="flex items-center text-4xl sm:text-5xl md:text-6xl font-extrabold">
+                        <CountUpNumber endValue={4} duration={1000} />
+                        +
+                     </h2>
+                     <p className="text-lg sm:text-xl font-bold mt-2 text-center">Countries</p>
+                  </div>
+               </FadeUpAnimation>
+               <FadeUpAnimation delay={0.4}>
+                  <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-sky-500">
+                     <h2 className="flex items-center text-4xl sm:text-5xl md:text-6xl font-extrabold">
+                        <CountUpNumber endValue={25} duration={1000} />+
+                     </h2>
+                     <p className="text-lg sm:text-xl font-bold mt-2 text-center">Years Experience</p>
+                  </div>
+               </FadeUpAnimation>
+               <FadeUpAnimation delay={0.6}>
+                  <div className="flex flex-col items-center justify-center bg-neutral-900 px-6 py-12 border-b-4 border-purple-500">
+                     <h2 className="flex items-center text-4xl sm:text-5xl md:text-6xl font-extrabold">
+                        <CountUpNumber endValue={2024} duration={2000} />
+                     </h2>
+                     <p className="text-lg sm:text-xl font-bold mt-2 text-center">Year Founded</p>
+                  </div>
+               </FadeUpAnimation>
             </div>
          </div>
 

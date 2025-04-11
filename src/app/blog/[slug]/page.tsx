@@ -3,6 +3,15 @@ import { client, urlFor } from "@/lib/sanity"
 import { PortableText, PortableTextComponents } from "@portabletext/react"
 import Image from "next/image"
 
+export const metadata = {
+   title: 'Blog | Offgrid Labs',
+   description: 'Explore articles and updates from Offgrid Labs.',
+   openGraph: {
+      title: 'Blog | Offgrid Labs',
+      description: 'Explore articles and updates from Offgrid Labs.',
+   },
+};
+
 const components: PortableTextComponents = {
    block: {
       h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,

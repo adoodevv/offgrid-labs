@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import FadeUpAnimation from './FadeUp';
 
 const GroupOfProducts = () => {
   const companyLogos = [
@@ -21,18 +23,25 @@ const GroupOfProducts = () => {
       <div className="container mx-auto px-4 md:px-0 pb-6 md:pb-12">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
           {companyLogos.map((logo, index) => (
-            <Link href={logo.link} key={index} className={`group px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} ${logo.bgColor} mb-0 md:mb-8 relative overflow-hidden`}>
-              <div
-                className={`absolute inset-0 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ${logo.invert ? '' : 'hidden'}`}
-              ></div>
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={170}
-                height={170}
-                className={`relative h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 ${logo.invert ? '' : ''}`}
-              />
-            </Link>
+            <FadeUpAnimation delay={index * 0.2} key={index}>
+              <Link
+                href={logo.link}
+                className={`group px-4 py-8 sm:py-10 md:py-14 flex items-center justify-center mx-0 md:mx-4 border-b-4 ${logo.color} ${logo.bgColor} mb-0 md:mb-8 relative overflow-hidden`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div
+                  className={`absolute inset-0 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ${logo.invert ? '' : 'hidden'}`}
+                ></div>
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={170}
+                  height={170}
+                  className={`relative h-16 sm:h-20 md:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 ${logo.invert ? '' : ''}`}
+                />
+              </Link>
+            </FadeUpAnimation>
           ))}
         </div>
       </div>

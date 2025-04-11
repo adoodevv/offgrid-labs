@@ -2,6 +2,17 @@ import { SimpleBlogCard } from "@/lib/interface";
 import { client } from '@/lib/sanity';
 import BlogCard from "@/components/BlogCard";
 
+export const metadata = {
+   title: 'Blog | Offgrid Labs',
+   description: 'Explore articles and updates from Offgrid Labs.',
+   keywords: 'Offgrid Labs, Products, Technology, Borderless Access',
+   openGraph: {
+      title: 'Blog | Offgrid Labs',
+      description: 'Explore articles and updates from Offgrid Labs.',
+   },
+};
+
+
 async function getData() {
    const query = `
   *[_type == 'blog'] | order(publishedAt desc) {
@@ -35,5 +46,6 @@ export default async function Blog() {
             )}
          </div>
       </div>
+
    )
 }

@@ -29,7 +29,7 @@ export default async function LatestBlogPosts() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {data.map((blog, index) => (
-              <BlogCard key={blog.currentSlug || index} blog={blog} />
+              <BlogCard delay={index * 0.2} key={blog.currentSlug || index} blog={blog} />
             ))}
           </div>
         )}
