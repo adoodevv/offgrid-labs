@@ -10,10 +10,10 @@ const Team = () => {
    ];
 
    const teamRepresentatives = [
-      { name: 'Paul R Brody', image: '/profile/person1.jpg', position: 'Ethereum Foundation' },
-      { name: 'Redwan Meslem', image: '/profile/person2.jpg', position: 'Razorfish CEO', },
-      { name: 'Yorke E Rhodes III', image: '/profile/person1.jpg', position: 'Microsoft Director of Engineering' },
-      { name: 'Aya Miyaguchi', image: '/profile/person2.jpg', position: 'JP Morgan Head of Web3 Labs' },
+      { name: 'Essiel Justice', image: '/profile/justice.jpg', position: 'Founder' },
+      { name: 'Emmanuel Bannerman', image: '/profile/bannerman.jpg', position: 'CFO', },
+      { name: 'Louis Phillipe', image: '/profile/louis.jpg', position: 'CMO' },
+      { name: 'Faith Roberts', image: '/profile/faith.jpg', position: 'Protocol Engineer' },
    ];
 
    return (

@@ -48,15 +48,15 @@ const WhatMemberSay = () => {
 
   const getTranslateX = () => {
     if (isMobile) {
-      return `-${activeIndex * 106}%`;
+      return `-${activeIndex * 100}%`;
     }
-    return `-${activeIndex * 33.33}%`;
+    return `-${activeIndex * 50}%`;
   };
 
   return (
     <section className="py-12 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-12">WHAT OUR MEMBERS SAY</h1>
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl bebas-neue-regular mb-12">KEY OPINION LEADERS</h1>
         <div className="relative">
           <div
             className="flex transition-transform duration-500 ease-in-out"
