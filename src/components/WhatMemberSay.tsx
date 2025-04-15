@@ -30,7 +30,7 @@ const WhatMemberSay = () => {
       text: "EEA is the essential bridge to provide the standards, frameworks and education needed to integrate blockchain technology into enterprise operations seamlessly and securely.",
       author: "PAUL BRODY",
       title: "EY GLOBAL BLOCKCHAIN LEADER",
-      logo: "/logos/ey.png",
+      logo: "/profile/michael.jpg",
       link: "https://www.ey.com/en_us/blockchain",
       icon: null,
     }
