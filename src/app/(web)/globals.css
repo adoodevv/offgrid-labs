@@ -228,3 +228,62 @@ h1 {
     clip: rect(67px, 9999px, 122px, 0);
   }
 }
+
+.glitching .glitch-effect {
+  opacity: 0.8;
+  transform: translate3d(5px, 0, 0);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 55%);
+  animation: glitch-anim-1 0.2s infinite linear alternate-reverse;
+}
+
+.glitching .glitch-effect-2 {
+  opacity: 0.8;
+  transform: translate3d(-5px, 0, 0);
+  clip-path: polygon(0 60%, 100% 50%, 100% 100%, 0 100%);
+  animation: glitch-anim-2 0.15s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 55%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 35%);
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 15%);
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: polygon(0 60%, 100% 50%, 100% 100%, 0 100%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  50% {
+    clip-path: polygon(0 30%, 100% 70%, 100% 100%, 0 100%);
+    transform: translate3d(3px, 0, 0);
+  }
+
+  100% {
+    clip-path: polygon(0 40%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate3d(-3px, 0, 0);
+  }
+}
+
+.glitch-effect,
+.glitch-effect-2 {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.glitching .glitch-effect,
+.glitching .glitch-effect-2 {
+  opacity: 0.8;
+}
