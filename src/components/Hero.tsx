@@ -1,49 +1,34 @@
-import Image from 'next/image';
 import CompanySlider from '@/components/CompanySlider';
+import GlitchText from '@/components/GlitchText';
 
 const Hero = () => {
    return (
-      <section className="min-h-screen flex flex-col bg-black text-white">
-         <div className="flex-grow flex flex-col relative overflow-hidden">
-            <div className="container mx-auto px-6 py-12">
-               <div className="flex flex-col-reverse md:flex-row items-center">
-                  <div className="w-full md:w-7/12 md:pr-12 z-10">
-                     <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular leading-tight">
-                        <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">
-                           OGL:
-                        </span>{" "}
-                        THE LEADING NONPROFIT DRIVING
-                        <span className="mt-2 block">
-                           <span className="text-yellow-400">ENTERPRISE</span>{" "}
-                           <span className="bg-gradient-to-r from-purple-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                              ETHEREUM
-                           </span>{" "}
-                           <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                              ADOPTION
-                           </span>
-                        </span>
-                     </h1>
-                     <p className="mt-6 text-lg sm:text-xl opacity-80 max-w-lg">
-                        As a trusted convener, OGL brings together businesses, developers, and the broader ecosystem to drive innovation and foster collaboration for a decentralized future.
-                     </p>
-                  </div>
-                  <div className="w-10/12 md:w-5/12 mt-0 z-10">
-                     <div className="relative">
-                        <Image
-                           src="/heroimg.jpg"
-                           alt="Ethereum hands with butterfly"
-                           width={550}
-                           height={550}
-                           className="relative z-10"
-                        />
-                     </div>
-                  </div>
-               </div>
+      <section
+         className="bg-cover bg-center bg-no-repeat relative"
+         style={{ backgroundImage: 'url("/hero.jpg")' }}
+      >
+         <div className="absolute inset-0 bg-black/60" />
+         <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col justify-center items-start min-h-screen">
+            <div className="max-w-3xl backdrop-blur-md bg-black/40 p-8 rounded-2xl shadow-xl">
+               <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-100">
+                  <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">OGL:</span>{" "}<GlitchText>THE LEADING NONPROFIT DRIVING</GlitchText>
+                  <span className="block mt-2">
+                     <span className="text-yellow-400">ENTERPRISE</span>{" "}
+                     <span className="bg-gradient-to-r from-purple-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">ETHEREUM</span>{" "}
+                     <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">ADOPTION</span>
+                  </span>
+               </h1>
+               <p className="mt-6 text-lg text-gray-300 font-light">
+                  As a trusted convener, OGL brings together businesses, developers, and the broader
+                  ecosystem to drive innovation and foster collaboration for a decentralized future.
+               </p>
             </div>
+         </div>
+         <div className="z-10 absolute bottom-0 left-0 w-full">
             <CompanySlider />
          </div>
       </section>
-   )
-}
+   );
+};
 
-export default Hero
+export default Hero;

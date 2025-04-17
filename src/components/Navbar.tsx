@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsTwitterX } from "react-icons/bs";
@@ -11,7 +11,21 @@ import Image from "next/image";
 
 const Navbar = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+   const [scrolled, setScrolled] = useState(false);
    const pathname = usePathname();
+
+   useEffect(() => {
+      const handleScroll = () => {
+         if (window.scrollY > 10) {
+            setScrolled(true);
+         } else {
+            setScrolled(false);
+         }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+   }, []);
 
    const menu = [
       { title: "Blog", href: "/blog" },
@@ -27,16 +41,16 @@ const Navbar = () => {
 
    return (
       <>
-         <nav className="fixed flex top-0 w-full bg-black/50 backdrop-blur-md shadow-lg h-20 sm:h-28 z-40 items-center">
+         <nav className={`fixed flex top-0 w-full h-20 z-40 items-center transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-black/40' : 'bg-transparent'}`}>
             <div className="container mx-auto flex items-center justify-between px-4 py-6">
                <div className="flex items-center gap-4">
                   <Link href="/" className="flex items-center">
                      <Image
                         src="/ethlogo.png"
-                        alt="Offgrid Labs Logo"
-                        width={190}
-                        height={40}
-                        className="h-14 w-auto"
+                        alt="Enterprise Ethereum Alliance Logo"
+                        width={250}
+                        height={60}
+                        className="h-12 w-auto"
                      />
                   </Link>
                   <div className="ml-4 flex items-center gap-2">
@@ -103,7 +117,6 @@ const Navbar = () => {
                </ul>
             </div>
          )}
-         <div className="h-20 sm:h-28"></div>
       </>
    );
 };
