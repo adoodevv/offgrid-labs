@@ -27,7 +27,7 @@ const CompanySlider = () => {
    }, [companyLogos.length]);
 
    return (
-      <div className="relative backdrop-blur-md bg-black/40 py-6 md:py-8 overflow-hidden">
+      <div className="relative backdrop-blur-md bg-black/40 py-4 md:py-6 overflow-hidden">
          <div
             className="flex items-center"
             style={{
@@ -42,7 +42,7 @@ const CompanySlider = () => {
                      alt={logo.name}
                      width={150}
                      height={50}
-                     className="h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                     className="h-8 md:h-10 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   />
                </div>
             ))}

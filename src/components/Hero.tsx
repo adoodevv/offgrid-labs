@@ -30,8 +30,8 @@ const Hero = () => {
          <div className="absolute inset-0 bg-black/60" />
 
          <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col justify-center items-start min-h-screen">
-            <div className="max-w-2xl backdrop-blur-md bg-black/40 p-8 rounded-2xl shadow-xl">
-               <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-100">
+            <div className="max-w-2xl backdrop-blur-md bg-black/40 p-8 rounded-2xl">
+               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-100">
                   <span className="bg-gradient-to-r from-yellow-400 via-green-300 to-green-400 bg-clip-text text-transparent">OGL:</span>{" "}<GlitchText>THE LEADING NONPROFIT DRIVING</GlitchText>
                   <span className="block mt-2">
                      <span className="text-yellow-400">ENTERPRISE</span>{" "}
