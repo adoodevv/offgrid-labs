@@ -46,11 +46,11 @@ const Navbar = () => {
                <div className="flex items-center gap-4">
                   <Link href="/" className="flex items-center">
                      <Image
-                        src="/ethlogo.png"
-                        alt="Enterprise Ethereum Alliance Logo"
-                        width={250}
-                        height={60}
-                        className="h-12 w-auto"
+                        src="/logo.png"
+                        alt="Logo"
+                        width={100}
+                        height={100}
+                        className="inline-block mr-2"
                      />
                   </Link>
                   <div className="ml-4 flex items-center gap-2">
