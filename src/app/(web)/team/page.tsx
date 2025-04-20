@@ -30,7 +30,7 @@ const Team = () => {
    return (
       <div>
          <div className="flex-grow text-white flex flex-col relative overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 pt-8 md:pt-12">
+            <div className="container mx-auto px-4 sm:px-6 py-20">
                <h1 className="text-4xl sm:text-5xl md:text-6xl pt-8 md:pt-12 bebas-neue-regular leading-tight">ADVISORS & PARTNERS</h1>
                <p className="text-base sm:text-lg mt-8 opacity-80">
                   Meet our esteemed Advisors and Partners who are dedicated to advancing blockchain technology and driving innovation across industries.

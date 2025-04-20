@@ -15,7 +15,7 @@ export const metadata = {
 
 const Careers = () => {
    return (
-      <div className="pt-16 flex flex-col bg-black text-white">
+      <div className="pt-20 flex flex-col bg-black text-white">
          <div className="container flex flex-col mx-auto px-4 sm:px-6 py-8 md:py-12 items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl bebas-neue-regular text-center">
                Join us in our mission to<br />

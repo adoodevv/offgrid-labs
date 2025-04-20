@@ -1,10 +1,23 @@
 'use client'
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Loading() {
+   const [showLoading, setShowLoading] = useState(true);
+
+   useEffect(() => {
+      const timer = setTimeout(() => {
+         setShowLoading(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+   }, []);
+
+   if (!showLoading) return null;
+
    return (
-      <div className="relative w-full h-screen bg-black overflow-hidden">
+      <div className="relative inset-0 z-50 w-full h-screen bg-black overflow-hidden">
          <div className="absolute inset-0 bg-grid-white/[0.05]"></div>
 
          <div className="absolute inset-0 flex items-center justify-center">
@@ -36,40 +49,7 @@ export default function Loading() {
             </div>
          </div>
 
-         {/* Terminal-like flicker */}
          <div className="absolute inset-0 bg-black opacity-0 animate-flicker"></div>
-
-         {/* Custom styles */}
-         <style jsx global>{`
-        @keyframes flicker {
-          0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 0; }
-          20%, 22%, 24%, 55% { opacity: 0.1; }
-        }
-        @keyframes progress {
-          0% { width: 0%; }
-          100% { width: 100%; }
-        }
-        .animate-flicker {
-          animation: flicker 3s linear infinite;
-        }
-        .animate-progress {
-          animation: progress 2s ease-in-out infinite;
-        }
-        .bg-grid-white {
-          background-image: 
-            linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-          background-size: 20px 20px;
-        }
-        .bg-scanlines {
-          background-image: linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(255, 0, 0, 0.05) 50%,
-            transparent 100%
-          );
-        }
-      `}</style>
       </div>
    );
 }

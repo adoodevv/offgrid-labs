@@ -14,7 +14,7 @@ export const metadata = {
 
 const Contact = () => {
    return (
-      <div className="container flex flex-col mx-auto px-4 sm:px-6 py-8 md:py-12">
+      <div className="container flex flex-col mx-auto px-4 sm:px-6 py-20">
          <div className="flex flex-col bg-black text-white">
             <div className="flex-grow flex flex-col relative overflow-hidden">
                <div className="flex flex-col mx-auto px-4 sm:px-6 py-8 md:py-12 items-center">

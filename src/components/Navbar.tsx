@@ -90,7 +90,13 @@ const Navbar = () => {
             <div className="fixed top-0 right-0 w-4/5 h-full bg-black text-white z-50 shadow-lg overflow-y-auto">
                <div className="flex justify-between items-center px-6 py-6">
                   <Link href="/">
-                     <Image src="/ethlogo.png" alt="Logo" width={190} height={40} className="h-14 w-auto" />
+                     <Image
+                        src="/logo.png"
+                        alt="Logo"
+                        width={100}
+                        height={100}
+                        className="inline-block"
+                     />
                   </Link>
                   <button onClick={toggleMobileMenu} className="text-2xl rounded-full p-2 bg-white/10">
                      <AiOutlineClose />

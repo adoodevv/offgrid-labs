@@ -9,11 +9,11 @@ export default function Footer() {
          <div className="container mx-auto px-6">
             <div className="mb-8">
                <Image
-                  src="/ethlogo.png"
-                  alt="Enterprise Ethereum Alliance Logo"
-                  width={250}
-                  height={60}
-                  className="h-12 w-auto"
+                  src="/logo.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="inline-block mr-2"
                />
             </div>
 

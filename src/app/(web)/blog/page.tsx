@@ -31,9 +31,9 @@ export default async function Blog() {
    const data: SimpleBlogCard[] = await getData();
 
    return (
-      <div className="flex-grow flex flex-col relative overflow-hidden pt-24">
+      <div className="flex-grow flex flex-col relative overflow-hidden py-20">
          <div className="container mx-auto px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl">Blog</h1>
+            <h1 className="text-4xl md:text-6xl my-6">Blog</h1>
 
             {data.length === 0 ? (
                <p className="text-lg mt-8 opacity-80">Coming soon...</p>
